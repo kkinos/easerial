@@ -1,2 +1,3 @@
 # easerial
-A simple command line application for serial communication
+
+A simple command line application for serial communication.
