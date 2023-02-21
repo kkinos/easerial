@@ -25,6 +25,7 @@ var fileCmd = &cobra.Command{
 
 		hexString := strings.ReplaceAll(string(fileBytes), "\n", "")
 		hexString = strings.ReplaceAll(hexString, " ", "")
+		hexString = strings.ReplaceAll(hexString, ",", "")
 
 		err = serial.SendHexString(portName, baudRate, dataBits, hexString, readBytes)
 		if err != nil {
