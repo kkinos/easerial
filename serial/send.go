@@ -1,4 +1,4 @@
-package cmd
+package serial
 
 import (
 	"encoding/hex"
@@ -9,7 +9,7 @@ import (
 	"go.bug.st/serial"
 )
 
-func sendData(portName string, baudRate int, dataBits int, hexString string, readBytes int) error {
+func SendHexString(portName string, baudRate int, dataBits int, hexString string, readBytes int) error {
 	mode := &serial.Mode{
 		BaudRate: baudRate,
 		DataBits: dataBits,

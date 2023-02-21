@@ -1,6 +1,7 @@
 package cmd
 
 import (
+	"github.com/kinpoko/easerial/serial"
 	"github.com/spf13/cobra"
 )
 
@@ -13,7 +14,7 @@ var stringCmd = &cobra.Command{
 
 		hexString := args[0]
 
-		err := sendData(portName, baudRate, dataBits, hexString, readBytes)
+		err := serial.SendHexString(portName, baudRate, dataBits, hexString, readBytes)
 		if err != nil {
 			return err
 		}

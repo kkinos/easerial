@@ -8,6 +8,7 @@ import (
 	"os"
 	"strings"
 
+	"github.com/kinpoko/easerial/serial"
 	"github.com/spf13/cobra"
 )
 
@@ -25,7 +26,7 @@ var fileCmd = &cobra.Command{
 		hexString := strings.ReplaceAll(string(fileBytes), "\n", "")
 		hexString = strings.ReplaceAll(hexString, " ", "")
 
-		err = sendData(portName, baudRate, dataBits, hexString, readBytes)
+		err = serial.SendHexString(portName, baudRate, dataBits, hexString, readBytes)
 		if err != nil {
 			return err
 		}
