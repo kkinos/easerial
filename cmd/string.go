@@ -7,8 +7,8 @@ import (
 
 // stringCmd represents the string command
 var stringCmd = &cobra.Command{
-	Use:   "string [hex string]",
-	Short: "Send data from a hex string",
+	Use:   "string [string]",
+	Short: "Send hex data from a string",
 	Args:  cobra.ExactArgs(1),
 	RunE: func(cmd *cobra.Command, args []string) error {
 

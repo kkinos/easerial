@@ -11,8 +11,8 @@ import (
 
 // fileCmd represents the file command
 var fileCmd = &cobra.Command{
-	Use:   "file [file]",
-	Short: "Send data from a text file",
+	Use:   "file [file_path]",
+	Short: "Send hex data from a text file",
 	Args:  cobra.ExactArgs(1),
 	RunE: func(cmd *cobra.Command, args []string) error {
 		fileBytes, err := os.ReadFile(args[0])
