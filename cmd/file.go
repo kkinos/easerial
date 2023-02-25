@@ -20,9 +20,8 @@ var fileCmd = &cobra.Command{
 			return errors.New("Faild to open file")
 		}
 
-		hexString := strings.ReplaceAll(string(fileBytes), "\n", "")
-		hexString = strings.ReplaceAll(hexString, " ", "")
-		hexString = strings.ReplaceAll(hexString, ",", "")
+		r := strings.NewReplacer("\n", "", " ", "", ",", "")
+		hexString := r.Replace(string(fileBytes))
 
 		err = serial.SendHexString(portName, baudRate, dataBits, hexString, readBytes)
 		if err != nil {
