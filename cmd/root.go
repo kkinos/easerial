@@ -7,9 +7,6 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var s bool
-var f bool
-
 var portName string
 var baudRate int
 var dataBits int
