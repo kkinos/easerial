@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"errors"
+	"fmt"
 	"os"
 	"strings"
 
@@ -17,7 +17,7 @@ var fileCmd = &cobra.Command{
 	RunE: func(cmd *cobra.Command, args []string) error {
 		fileBytes, err := os.ReadFile(args[0])
 		if err != nil {
-			return errors.New("Faild to open file")
+			return fmt.Errorf("Faild to open file `%s`", args[0])
 		}
 
 		r := strings.NewReplacer("\n", "", " ", "", ",", "")

@@ -17,9 +17,7 @@ func SendHexString(portName string, baudRate int, dataBits int, hexString string
 
 	port, err := serial.Open(portName, mode)
 	if err != nil {
-		fmt.Println(err)
-		return errors.New("Failed to open serial port")
-
+		return fmt.Errorf("Failed to open serial port `%s`", portName)
 	}
 	defer port.Close()
 
