@@ -21,7 +21,7 @@ func SendHexString(portName string, baudRate int, dataBits int, hexString string
 	}
 	defer port.Close()
 
-	port.SetReadTimeout(1 * time.Second)
+	port.SetReadTimeout(5 * time.Second)
 	port.ResetInputBuffer()
 	port.ResetOutputBuffer()
 
