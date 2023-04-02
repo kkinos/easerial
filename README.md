@@ -20,14 +20,15 @@ go install github.com/kinpoko/easerial@latest
 ### `easerial string`
 
 ```bash
-easerial string <string> [--port <port name>] [--baud <baud rate>] [--data-bits <data bits>] [--read-bytes <read bytes>]
+easerial string <string> [--port <port name>] [--baud <baud rate>] [--data-bits <data bits>] [--read-bytes <read bytes>] [--read-timeout-sec <read timeout sec>]
 ```
 
 - `<string>`: Required. The string to send as hex data.
 - `--port`: Optional. The serial port to use. Defaults to /dev/ttyUSB1.
 - `--baud`: Optional. The baud rate to use. Defaults to 9600.
 - `--data-bits`: Optional. The number of data bits to send. Defaults to 8.
-- `---read-bytes`: Optional. The number of reading bytes after sending. Defaults to 4.
+- `--read-bytes`: Optional. The number of reading bytes after sending. Defaults to 4.
+- `--read-timeout-sec`: Optional. The number of seconds of timeout for reading serial port after sending. Defaults to 1.
 
 Example:
 
@@ -38,14 +39,15 @@ easerial string 68656c6c6f20776f726c64 --baud 115200 --port /dev/ttyUSB0
 ### `easerial file`
 
 ```bash
-easerial file <file_path> [--port <port name>] [--baud <baud rate>] [--data-bits <data bits>] [--read-bytes <read bytes>]
+easerial file <file_path> [--port <port name>] [--baud <baud rate>] [--data-bits <data bits>] [--read-bytes <read bytes>][--read-timeout-sec <read timeout sec>]
 ```
 
 - `<file_path>`: Required. The path to the file send as a hex data.
 - `--port`: Optional. The serial port to use. Defaults to /dev/ttyUSB1.
 - `--baud`: Optional. The baud rate to use. Defaults to 9600.
 - `--data-bits`: Optional. The number of data bits to send. Defaults to 8.
-- `---read-bytes`: Optional. The number of reading bytes after sending. Defaults to 4.
+- `--read-bytes`: Optional. The number of reading bytes after sending. Defaults to 4.
+- `--read-timeout-sec`: Optional. The number of seconds of timeout for reading serial port after sending. Defaults to 1.
 
 Example:
 
