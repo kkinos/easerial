@@ -14,7 +14,7 @@ var stringCmd = &cobra.Command{
 
 		hexString := args[0]
 
-		err := serial.SendHexString(portName, baudRate, dataBits, hexString, readBytes)
+		err := serial.SendHexString(portName, baudRate, dataBits, hexString, readBytes, readTimeoutSec)
 		if err != nil {
 			return err
 		}
@@ -27,5 +27,6 @@ func init() {
 	stringCmd.Flags().IntVar(&baudRate, "baud", 9600, "baud rate")
 	stringCmd.Flags().IntVar(&dataBits, "data-bits", 8, "data bits")
 	stringCmd.Flags().IntVar(&readBytes, "read-bytes", 4, "read bytes")
+	stringCmd.Flags().IntVar(&readTimeoutSec, "read-timeout-sec", 1, "read timeout sec")
 	rootCmd.AddCommand(stringCmd)
 }

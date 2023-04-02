@@ -23,7 +23,7 @@ var fileCmd = &cobra.Command{
 		r := strings.NewReplacer("\n", "", " ", "", ",", "")
 		hexString := r.Replace(string(fileBytes))
 
-		err = serial.SendHexString(portName, baudRate, dataBits, hexString, readBytes)
+		err = serial.SendHexString(portName, baudRate, dataBits, hexString, readBytes, readTimeoutSec)
 		if err != nil {
 			return err
 		}
@@ -36,6 +36,7 @@ func init() {
 	fileCmd.Flags().IntVar(&baudRate, "baud", 9600, "baud rate")
 	fileCmd.Flags().IntVar(&dataBits, "data-bits", 8, "data bits")
 	fileCmd.Flags().IntVar(&readBytes, "read-bytes", 4, "read bytes")
+	fileCmd.Flags().IntVar(&readTimeoutSec, "read-timeout-sec", 1, "read timeout sec")
 	rootCmd.AddCommand(fileCmd)
 
 }

@@ -11,6 +11,7 @@ var portName string
 var baudRate int
 var dataBits int
 var readBytes int
+var readTimeoutSec int
 
 var rootCmd = &cobra.Command{
 	Use:   "easerial",

@@ -9,7 +9,7 @@ import (
 	"go.bug.st/serial"
 )
 
-func SendHexString(portName string, baudRate int, dataBits int, hexString string, readBytes int) error {
+func SendHexString(portName string, baudRate int, dataBits int, hexString string, readBytes int, readTimeoutSec int) error {
 	mode := &serial.Mode{
 		BaudRate: baudRate,
 		DataBits: dataBits,
@@ -21,7 +21,7 @@ func SendHexString(portName string, baudRate int, dataBits int, hexString string
 	}
 	defer port.Close()
 
-	port.SetReadTimeout(5 * time.Second)
+	port.SetReadTimeout(time.Duration(readTimeoutSec) * time.Second)
 	port.ResetInputBuffer()
 	port.ResetOutputBuffer()
 
