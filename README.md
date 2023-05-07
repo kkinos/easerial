@@ -1,6 +1,6 @@
 # easerial
 
-[![Go](https://github.com/kinpoko/easerial/actions/workflows/go.yml/badge.svg)](https://github.com/kinpoko/grvemu/actions/workflows/go.yml)
+[![Go](https://github.com/kinpoko/easerial/actions/workflows/go.yml/badge.svg)](https://github.com/kinpoko/easerial/actions/workflows/go.yml)
 ![License](https://img.shields.io/github/license/kinpoko/easerial?color=blue)
 
 A simple command line application for serial communication.
